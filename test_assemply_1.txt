@@ -1,0 +1,28 @@
+li a0, 50 #50 is an arbitrary number, most tests will end up with a result of 50 to keep things simple
+li a1, 1
+li a2, 50
+li a3, 1
+
+auipc	t0,0x0
+auipc	t1,0x0
+nop
+nop
+
+test:
+add    a4, a0, a1
+sub    a5, a2, a3
+addi	t0,t0,72 # 58 
+addi	t1,t1,76 # 60 
+
+nop
+nop
+nop
+nop
+
+lw	a6, 0(t0)
+lw	a7, 0(t1)
+nop
+nop
+nop
+j test
+
